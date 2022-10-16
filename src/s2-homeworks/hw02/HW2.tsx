@@ -56,7 +56,7 @@ function HW2() {
 
     return (
         <div id={'hw2'}>
-            hello
+            hello frend
             {/*<div className={s2.hwTitle}>Homework #2</div>*/}
             {/*<div className={s2.hw}>*/}
             {/*    <Affairs*/}
