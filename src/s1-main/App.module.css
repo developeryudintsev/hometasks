@@ -7,7 +7,14 @@
     width: 1280px;
     height: 373px;
     left: 0px;
-    top: 107px;
+    top: 157px;
+}
+.hw2{
+    position: absolute;
+    width: 1280px;
+    height: 373px;
+    left: 100px;
+    top: 577px;
 }
 
 .hwTitle {

@@ -55,17 +55,16 @@ function HW2() {
     }
 
     return (
-        <div id={'hw2'}>
-            hello frend
-            {/*<div className={s2.hwTitle}>Homework #2</div>*/}
-            {/*<div className={s2.hw}>*/}
-            {/*    <Affairs*/}
-            {/*        data={filteredAffairs}*/}
-            {/*        setFilter={setFilter}*/}
-            {/*        deleteAffairCallback={deleteAffairCallback}*/}
-            {/*        filter={filter}*/}
-            {/*    />*/}
-            {/*</div>*/}
+        <div id={'hw2'} className={s2.hw2}>
+            <div className={s2.hwTitle}>Homework #2</div>
+            <div className={s2.hw}>
+                <Affairs
+                    data={filteredAffairs}
+                    setFilter={setFilter}
+                    deleteAffairCallback={deleteAffairCallback}
+                    filter={filter}
+                />
+            </div>
         </div>
     )
 }

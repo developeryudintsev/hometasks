@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react'
-import { message0 } from '../HW1'
+import React, {ChangeEvent, ChangeEventHandler, useEffect, useRef, useState} from 'react'
+import {message0, MessageType} from '../HW1'
 import s from './MessageSender.module.css'
 type messgesType={
     id: number,
@@ -9,14 +9,15 @@ type messgesType={
         time:string,
     }
 }
+
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
-const MessageSender = (props: any) => {
+const MessageSender = (props:any) => {
     const M = props.M
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const [messages, setMessages] = useState<any[]>([])
-    const [text, setText] = useState<any>('')
+    const [text, setText] = useState<string>('')
 
-    const onChange = (e: any) => {
+    const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.currentTarget.value)
     }
 
