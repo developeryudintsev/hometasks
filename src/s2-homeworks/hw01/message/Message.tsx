@@ -12,9 +12,6 @@ const Message = (props: MessagePropsType) => {
     console.log(props.message)
     return (
         <div>
-            {
-                props.message.id==undefined
-             &&
         <div id={'hw1-message-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
                 <img
@@ -42,7 +39,8 @@ const Message = (props: MessagePropsType) => {
                 {/**/}
             </div>
         </div>
-            }
+                )
+
         </div>
     )
 }
