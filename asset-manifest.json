@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "//developeryudintsev.github.io/hometasks/static/css/main.c27908e5.css",
-    "main.js": "//developeryudintsev.github.io/hometasks/static/js/main.bb084148.js",
-    "static/js/787.66cb4309.chunk.js": "//developeryudintsev.github.io/hometasks/static/js/787.66cb4309.chunk.js",
-    "static/media/avatar.png": "//developeryudintsev.github.io/hometasks/static/media/avatar.d947cb9d0d13765666b6.png",
-    "index.html": "//developeryudintsev.github.io/hometasks/index.html",
-    "main.c27908e5.css.map": "//developeryudintsev.github.io/hometasks/static/css/main.c27908e5.css.map",
-    "main.bb084148.js.map": "//developeryudintsev.github.io/hometasks/static/js/main.bb084148.js.map",
-    "787.66cb4309.chunk.js.map": "//developeryudintsev.github.io/hometasks/static/js/787.66cb4309.chunk.js.map"
+    "main.css": "/hometasks/static/css/main.d7a379c7.css",
+    "main.js": "/hometasks/static/js/main.d7edf764.js",
+    "static/js/787.66cb4309.chunk.js": "/hometasks/static/js/787.66cb4309.chunk.js",
+    "static/media/avatar.png": "/hometasks/static/media/avatar.d947cb9d0d13765666b6.png",
+    "index.html": "/hometasks/index.html",
+    "main.d7a379c7.css.map": "/hometasks/static/css/main.d7a379c7.css.map",
+    "main.d7edf764.js.map": "/hometasks/static/js/main.d7edf764.js.map",
+    "787.66cb4309.chunk.js.map": "/hometasks/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c27908e5.css",
-    "static/js/main.bb084148.js"
+    "static/css/main.d7a379c7.css",
+    "static/js/main.d7edf764.js"
   ]
 }
