@@ -58,7 +58,7 @@ export const friendMessage0: MessageType = {
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
-                    <Message objmessage={message0} />
+                    <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
 

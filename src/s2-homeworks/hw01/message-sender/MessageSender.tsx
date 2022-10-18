@@ -1,20 +1,24 @@
 import React, {ChangeEvent, ChangeEventHandler, useEffect, useRef, useState} from 'react'
 import {message0, MessageType} from '../HW1'
 import s from './MessageSender.module.css'
-type messgesType={
+
+type messgesType = {
     id: number,
-    user: string,
+    user: {
+        avatar: string, // можно менять
+        name: string,  // можно менять
+    },
     message: {
-        text:string,
-        time:string,
+        text: string,
+        time: string,
     }
 }
 
 // компонента, которая тестирует вашу компоненту (не изменять, any не трогать)
-const MessageSender = (props:any) => {
+const MessageSender = (props: any) => {
     const M = props.M
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-    const [messages, setMessages] = useState<any[]>([])
+    const [messages, setMessages] = useState<messgesType[]>([])
     const [text, setText] = useState<string>('')
 
     const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -29,6 +33,7 @@ const MessageSender = (props:any) => {
     }, [text])
 
     const addMessage = () => {
+
         setMessages([
             ...messages,
             {
@@ -49,9 +54,15 @@ const MessageSender = (props:any) => {
 
     return (
         <>
-            {messages.map((m) => (
-                <M key={'message' + m.id} message={m} />
-            ))}
+            {messages.map((m) => {
+                console.log(m)
+                return (
+                    < M
+                        key={'message' + m.id}
+                        message={m}
+                    />
+                )
+            })}
 
             <div id={'hw1-send-message-form'} className={s.sendForm}>
                 <textarea
@@ -71,7 +82,7 @@ const MessageSender = (props:any) => {
                     id={'hw1-button'}
                     className={s.button}
 
-                    onClick={addMessage}
+                    onClick={() => addMessage()}
                 >
                     {/*текст кнопки могут изменить студенты*/}
                     Send
