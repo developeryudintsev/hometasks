@@ -61,7 +61,6 @@ export const friendMessage0: MessageType = {
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
-
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
             </div>
