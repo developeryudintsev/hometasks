@@ -10,7 +10,6 @@ export type MessagePropsType = {
 // нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
     let [time]=useState(props.message.message.time)
-    console.log(time)
     return (
         <div id={'hw1-message-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
