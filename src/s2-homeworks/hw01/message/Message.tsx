@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import s from './Message.module.css'
 import {MessageType} from "../HW1";
 
@@ -9,9 +9,9 @@ export type MessagePropsType = {
 
 // нужно отобразить приходящие данные
 const Message = (props: MessagePropsType) => {
-    console.log(props.message)
+    let [time]=useState(props.message.message.time)
+    console.log(time)
     return (
-        <div>
         <div id={'hw1-message-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
                 <img
@@ -35,12 +35,9 @@ const Message = (props: MessagePropsType) => {
             </div>
             <div id={'hw1-time-' + props.message.id} className={s.time}>
                 {/*создаёт студент*/}
-                {props.message.message.time}
+                {time}
                 {/**/}
             </div>
-        </div>
-                )
-
         </div>
     )
 }

@@ -7,6 +7,7 @@ type friendMessageType={
     message:MessageType
 }
 const FriendMessage = (props: friendMessageType) => {
+    console.log(props.message)
     return (
         <div
             id={'hw1-friend-message-' + props.message.id}
