@@ -55,7 +55,7 @@ const MessageSender = (props: any) => {
     return (
         <>
             {messages.map((m) => {
-                console.log(m)
+
                 return (
                     < M
                         key={'message' + m.id}
