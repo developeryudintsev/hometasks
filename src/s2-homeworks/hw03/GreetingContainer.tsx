@@ -49,14 +49,15 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         setHi(false)
     }
     const addUser = () => {
-        pureAddUser(name, setError, setName, addUserCallback(name))
-        setlastUserName(name)
 
 
-        if(name.trim()=='') {
 
+        if(name.trim()==''||name=='') {
+            users.pop()
             setError('Ошибка! Введите имя!')
         }else{
+            pureAddUser(name, setError, setName, addUserCallback(name))
+            setlastUserName(name)
             setHi(true)
         }
     }
