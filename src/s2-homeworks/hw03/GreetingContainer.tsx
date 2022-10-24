@@ -49,9 +49,6 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         setHi(false)
     }
     const addUser = () => {
-
-
-
         if(name.trim()==''||name=='') {
             users.pop()
             setError('Ошибка! Введите имя!')
