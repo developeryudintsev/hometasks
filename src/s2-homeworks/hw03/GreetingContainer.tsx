@@ -24,7 +24,6 @@ if(name.trim()==''){
 }
 
 export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => { // если нажата кнопка Enter - добавить
-    console.log(e.keyCode)
     if(e.keyCode===13){
     addUser()
 }
@@ -41,15 +40,18 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
+    const [hi, setHi] = useState<boolean>(false) // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value) // need to fix
         console.log(e.currentTarget.value)
         error && setError('')
+        setHi(false)
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback(name))
         setlastUserName(name)
+        setHi(true)
     }
 
     const onBlur = () => {
@@ -73,7 +75,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
             error={error}
             totalUsers={totalUsers}
             lastUserName={lastUserName}
-            // setlastUserName={setlastUserName}
+            hi={hi}
         />
     )
 }

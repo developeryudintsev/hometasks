@@ -5,7 +5,12 @@
 }
 
 .error {
-
+    position: absolute;
+    width: 193px;
+    height: 20px;
+    left: 52px;
+    top:60px;
+    color: red;
 }
 
 .input {
@@ -30,6 +35,17 @@
 }
 
 .errorInput {
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 260px;
+    height: 30px;
+    left: 0px;
+    top: 24px;
+
+    border: 1px solid #CC0000;
+    border-radius: 5px;
 }
 
 .button {

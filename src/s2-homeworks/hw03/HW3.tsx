@@ -39,7 +39,6 @@ const HW3 = () => {
         pureAddUserCallback(name, setUsers, users)
 
     }
-    console.log(users)
 
     return (
         <div id={'hw3'} className={s2.hw3}>

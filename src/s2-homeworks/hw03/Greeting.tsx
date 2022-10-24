@@ -10,6 +10,7 @@ type GreetingPropsType = {
     error: string // need to fix any
     totalUsers: number // need to fix any
     lastUserName:string // need to fix any
+    hi:boolean
     // setlastUserName?:(lastUserName:string)=>void
 }
 
@@ -24,7 +25,7 @@ const Greeting: React.FC<GreetingPropsType> = (
         error,
         totalUsers,
         lastUserName,
-        // setlastUserName,
+         hi,
     } // деструктуризация пропсов
 ) => {
     const inputClass = s.errorInput // need to fix with (?:)
@@ -44,7 +45,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                         id={'hw3-input'}
                         value={name}
                         onChange={(e)=>setNameCallback(e)}
-                        className={s.inputClass}
+                        className={error?inputClass:s.inputClass}
                         onKeyDown={(e)=>onEnter(e)}
                         onBlur={()=>onBlur()}
                     />
@@ -63,7 +64,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                 </button>
             </div>
 
-            {lastUserName && (
+            {hi && (
                 <div className={s.greeting}>
                     Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
                 </div>
