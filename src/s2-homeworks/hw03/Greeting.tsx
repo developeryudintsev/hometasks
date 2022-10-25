@@ -1,4 +1,11 @@
-import React, {ChangeEvent, ChangeEventHandler, FocusEventHandler, KeyboardEvent, KeyboardEventHandler} from 'react'
+import React, {
+    ChangeEvent,
+    ChangeEventHandler,
+    FocusEventHandler,
+    KeyboardEvent,
+    KeyboardEventHandler,
+    useEffect
+} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
@@ -28,7 +35,8 @@ const Greeting: React.FC<GreetingPropsType> = (
          hi,
     } // деструктуризация пропсов
 ) => {
-    const inputClass = s.errorInput // need to fix with (?:)
+    let  inputClass = error?s.errorInput:s.input ; // need to fix with (?:)
+    console.log(error?s.errorInput:s.input)
 // lastUserName=name
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
@@ -45,7 +53,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                         id={'hw3-input'}
                         value={name}
                         onChange={(e)=>setNameCallback(e)}
-                        className={error?inputClass:s.inputClass}
+                        className={inputClass}
                         onKeyDown={(e)=>onEnter(e)}
                         onBlur={()=>onBlur()}
                     />
