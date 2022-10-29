@@ -16,7 +16,7 @@ let onEnter=(value:string)=>{
             setValue('')
         }
 }
-    console.log(stateForAllInputs)
+
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -40,7 +40,6 @@ let onEnter=(value:string)=>{
                     />
                 </div>
             </div>
-
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
@@ -77,7 +76,6 @@ let onEnter=(value:string)=>{
                     </SuperButton>
                 </div>
             </div>
-
             <div className={s.checkboxes}>
                 {/*чекбокс с текстом:*/}
                 <div>

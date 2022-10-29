@@ -29,11 +29,11 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    let [bool,setBool]=useState<any>(restProps.checked)
+    let [bool, setBool] = useState<any>(restProps.checked)
+    console.log(bool)
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChangeChecked(!bool)
         setBool(!bool)
-        console.log(bool)
 
     }
 
