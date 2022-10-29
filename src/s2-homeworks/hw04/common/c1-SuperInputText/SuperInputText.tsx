@@ -3,7 +3,7 @@ import React, {
     DetailedHTMLProps,
     InputHTMLAttributes,
     KeyboardEvent,
-    ReactNode,
+    ReactNode, useState,
 } from 'react'
 import s from './SuperInputText.module.css'
 
@@ -15,10 +15,12 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
     // и + ещё пропсы которых нет в стандартном инпуте
+    onChange?:(e:ChangeEvent<HTMLInputElement>)=>void
     onChangeText?: (value: string) => void
-    onEnter?: () => void
+    onEnter?: (value:string) => void
     error?: ReactNode
     spanClassName?: string
+    value:string
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
@@ -31,6 +33,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         className,
         spanClassName,
         id,
+        value,
 
         ...restProps // все остальные пропсы попадут в объект restProps
     }
@@ -45,7 +48,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
         onEnter && // если есть пропс onEnter
         e.key === 'Enter' && // и если нажата кнопка Enter
-        onEnter() // то вызвать его
+        onEnter(value) // то вызвать его
+
     }
 
     const finalSpanClassName = s.error
@@ -58,6 +62,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         <div className={s.inputWrapper}>
             <input
                 id={id}
+                value={value}
                 type={'text'}
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}

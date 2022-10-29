@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {KeyboardEvent, useState} from 'react'
 import s from './Stand.module.css'
 import SuperInputText from './common/c1-SuperInputText/SuperInputText'
 import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
@@ -7,8 +7,16 @@ import SuperButton from './common/c2-SuperButton/SuperButton'
 const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
     const [error, setError] = useState<string>('')
-
+    // console.log(stateForAllInputs)
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
+let onEnter=(value:string)=>{
+        if(value.trim()==''||value==''){
+            setError('error')
+        }else {
+            setValue('')
+        }
+}
+    console.log(stateForAllInputs)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -28,14 +36,7 @@ const Stand = () => {
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
-                        onEnter={() => {
-                            setError(
-                                stateForAllInputs.trim()
-                                    ? ''
-                                    : 'Error'
-                            )
-                            setValue('')
-                        }}
+                        onEnter={(value)=>onEnter(value)}
                     />
                 </div>
             </div>
@@ -43,13 +44,14 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton id={'hw4-super-button-default'} className={'SuperButton_default__wJwPJ'}
+                    >
                         default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'} className={'SuperButton_red__1xVaU'}>
                         red
                     </SuperButton>
                 </div>
@@ -57,6 +59,7 @@ const Stand = () => {
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
+                        className={'SuperButton_disabled__rXrQD'}
                         xType={'red'}
                         disabled
                     >
@@ -67,6 +70,7 @@ const Stand = () => {
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
+                        className={'SuperButton_secondary__jVel5'}
                         xType={'secondary'}
                     >
                         secondary
@@ -90,7 +94,8 @@ const Stand = () => {
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
                         checked={stateForAllCheckboxes}
-                        onChange={(e) => setChecked(e.currentTarget.checked)}
+                        onChange={() => setChecked(!stateForAllCheckboxes)}
+                        onChangeChecked={setChecked}
                     />
                 </div>
             </div>

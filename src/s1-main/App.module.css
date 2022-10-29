@@ -9,6 +9,13 @@
     left: 0px;
     top: 157px;
 }
+.hws4 {
+    position: absolute;
+    width: 480px;
+    height: 373px;
+    left: 0px;
+    top: 157px;
+}
 .hw2{
     position: absolute;
     width: 1280px;
@@ -23,6 +30,16 @@
     left: 100px;
     top: 907px;
 }
+.hw4 {
+    position: absolute;
+    width: 71px;
+    height: 27px;
+    left: 70px;
+    top: 1135px;
+
+
+}
+
 
 .hwTitle {
     position: absolute;
