@@ -9,13 +9,13 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
     // console.log(stateForAllInputs)
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
-let onEnter=(value:string)=>{
-        if(value.trim()==''||value==''){
+    let onEnter = (value: string) => {
+        if (value.trim() == '' || value == '') {
             setError('error')
-        }else {
+        } else {
             setValue('')
         }
-}
+    }
 
 
     return (
@@ -36,21 +36,23 @@ let onEnter=(value:string)=>{
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
-                        onEnter={(value)=>onEnter(value)}
+                        onEnter={(value) => onEnter(value)}
                     />
                 </div>
             </div>
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'} className={'SuperButton_default__wJwPJ'}
+                    <SuperButton id={'hw4-super-button-default'}
+                                 xType={'default'} disabled={false}
                     >
                         default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'} className={'SuperButton_red__1xVaU'}>
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'}
+                                 disabled={false}>
                         red
                     </SuperButton>
                 </div>
@@ -58,8 +60,7 @@ let onEnter=(value:string)=>{
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
-                        className={'SuperButton_disabled__rXrQD'}
-                        xType={'red'}
+                        xType={'disabled'}
                         disabled
                     >
                         disabled
@@ -69,8 +70,8 @@ let onEnter=(value:string)=>{
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
-                        className={'SuperButton_secondary__jVel5'}
                         xType={'secondary'}
+                        disabled={false}
                     >
                         secondary
                     </SuperButton>
@@ -82,6 +83,7 @@ let onEnter=(value:string)=>{
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}
                         checked={stateForAllCheckboxes}
+                        onChange={() => setChecked(!stateForAllCheckboxes)}
                         onChangeChecked={setChecked}
                     >
                         some text
