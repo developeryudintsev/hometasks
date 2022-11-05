@@ -16,7 +16,7 @@ const Stand = () => {
             setValue('')
         }
     }
-
+    console.log(stateForAllCheckboxes)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
@@ -45,38 +45,37 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}
-                                 xType={'default'} disabled={false}
-                    >
-                        default
-                    </SuperButton>
-                </div>
-                {/*красная кнопка:*/}
-                <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}
-                                 disabled={false}>
-                        red
-                    </SuperButton>
-                </div>
-                {/*задизэйбленная кнопка:*/}
-                <div>
-                    <SuperButton
-                        id={'hw4-super-button-disabled'}
-                        xType={'disabled'}
-                        disabled
-                    >
-                        disabled
-                    </SuperButton>
-                </div>
-                {/*задизэйбленная кнопка:*/}
-                <div>
-                    <SuperButton
-                        id={'hw4-super-button-secondary'}
-                        xType={'secondary'}
-                        disabled={false}
-                    >
-                        secondary
-                    </SuperButton>
+                    {/*обычная кнопка:*/}
+                    <div>
+                        <SuperButton id={'hw4-super-button-default'}>
+                            default
+                        </SuperButton>
+                    </div>
+                    {/*красная кнопка:*/}
+                    <div>
+                        <SuperButton id={'hw4-super-button-red'} xType={'red'}>
+                            red
+                        </SuperButton>
+                    </div>
+                    {/*задизэйбленная кнопка:*/}
+                    <div>
+                        <SuperButton
+                            id={'hw4-super-button-disabled'}
+                            xType={'red'}
+                            disabled
+                        >
+                            disabled
+                        </SuperButton>
+                    </div>
+                    {/*задизэйбленная кнопка:*/}
+                    <div>
+                        <SuperButton
+                            id={'hw4-super-button-secondary'}
+                            xType={'secondary'}
+                        >
+                            secondary
+                        </SuperButton>
+                    </div>
                 </div>
             </div>
             <div className={s.checkboxes}>
@@ -84,8 +83,6 @@ const Stand = () => {
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}
-                        checked={stateForAllCheckboxes}
-                        onChange={() => setChecked(!stateForAllCheckboxes)}
                         onChangeChecked={setChecked}
                     >
                         some text
@@ -95,8 +92,6 @@ const Stand = () => {
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
-                        checked={stateForAllCheckboxes}
-                        onChange={() => setChecked(!stateForAllCheckboxes)}
                         onChangeChecked={setChecked}
                     />
                 </div>
