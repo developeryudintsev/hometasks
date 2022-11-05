@@ -8,7 +8,7 @@ const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
     const [error, setError] = useState<string>('')
     // console.log(stateForAllInputs)
-    const [stateForAllCheckboxes, setChecked] = useState<boolean>(true)
+    const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
     let onEnter = (value: string) => {
         if (value.trim() == '' || value == '') {
             setError('error')
