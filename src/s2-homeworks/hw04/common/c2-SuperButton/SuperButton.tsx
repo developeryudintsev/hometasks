@@ -6,14 +6,14 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
     HTMLButtonElement>
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
-    // className: string
-    // disabled: boolean
     id:string
     xType?:string
+    disabled?:boolean
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (
     {
+        id,
         xType,
         // className,
         disabled,
@@ -21,7 +21,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     }
 ) => {
     let finalClassName ;
-
+    console.log( xType, disabled)
     if (xType=='secondary'){
         finalClassName=s.secondary
     }else if(xType=='disabled'){
