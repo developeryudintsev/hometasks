@@ -16,7 +16,7 @@ const Stand = () => {
             setValue('')
         }
     }
-
+    console.log(stateForAllCheckboxes)
     return (
         <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>
@@ -92,6 +92,7 @@ const Stand = () => {
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
                         checked={stateForAllCheckboxes}
+                        onChangeChecked={setChecked}
                         onChange={(e) => setChecked(e.currentTarget.checked)}
                     />
                 </div>
