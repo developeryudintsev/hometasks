@@ -8,7 +8,7 @@ const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
     const [error, setError] = useState<string>('')
     // console.log(stateForAllInputs)
-    const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
+    const [stateForAllCheckboxes, setChecked] = useState<boolean>(true)
     let onEnter = (value: string) => {
         if (value.trim() == '' || value == '') {
             setError('error')
@@ -16,7 +16,6 @@ const Stand = () => {
             setValue('')
         }
     }
-    console.log(stateForAllCheckboxes)
 
     return (
         <div id={'hw4-stand'} className={s.stand}>
