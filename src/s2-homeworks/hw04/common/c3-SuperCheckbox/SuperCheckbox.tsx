@@ -1,5 +1,6 @@
 import React, {
     ChangeEvent,
+    ChangeEventHandler,
     DetailedHTMLProps,
     InputHTMLAttributes, useState,
 } from 'react'
@@ -27,9 +28,10 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-//@ts-ignore
-        onChange(e.currentTarget.checked)
+    const onChangeCallback = (e:ChangeEvent<HTMLInputElement>) => {
+        let bool:boolean=e.currentTarget.checked
+        onChangeChecked?.(bool)
+        onChange?.(e)
         // restProps.onChangeChecked(!bool)
         // setBool(!bool)
 
