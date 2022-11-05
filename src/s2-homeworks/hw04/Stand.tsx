@@ -79,10 +79,10 @@ const Stand = () => {
                 </div>
             </div>
             <div className={s.checkboxes}>
-                {/*чекбокс с текстом:*/}
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}
+                        checked={stateForAllCheckboxes}
                         onChangeChecked={setChecked}
                     >
                         some text
@@ -92,7 +92,8 @@ const Stand = () => {
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
-                        onChangeChecked={setChecked}
+                        checked={stateForAllCheckboxes}
+                        onChange={(e) => setChecked(e.currentTarget.checked)}
                     />
                 </div>
             </div>

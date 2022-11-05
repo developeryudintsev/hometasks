@@ -10,27 +10,26 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
     HTMLInputElement>
 
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
-    onChangeChecked: (checked: boolean) => void
-    spanClassName?: string
-    // id: string;
-    // checked: boolean;
-    // onChange: (stateForAllCheckboxes:boolean) => void;
+    id: string;
+    onChangeChecked?: (checked: boolean) => void
+    checked: boolean;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     {
         onChange,
         onChangeChecked,
+        checked,
         className,
         children, // в эту переменную попадёт текст, типизировать не нужно так как он затипизирован в React.FC
         id,
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
-    let [bool, setBool] = useState<any>(restProps.checked)
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.checked)
-        onChangeChecked(e.currentTarget.checked)
+//@ts-ignore
+        onChange(e.currentTarget.checked)
         // restProps.onChangeChecked(!bool)
         // setBool(!bool)
 
@@ -42,7 +41,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     return (
         <label className={s.label}>
             <input
-                value={bool}
+
                 id={id}
                 type={'checkbox'}
                 onChange={onChangeCallback}
