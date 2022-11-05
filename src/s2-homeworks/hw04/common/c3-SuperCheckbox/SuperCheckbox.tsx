@@ -9,14 +9,12 @@ import s from './SuperCheckbox.module.css'
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>
-
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
     id: string;
     onChangeChecked?: (checked: boolean) => void
     checked: boolean;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
-
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     {
         onChange,
@@ -28,13 +26,19 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
+    //     let [bool, setBool] = useState<any>(restProps.checked)
+//     console.log(bool)
+//     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+//         onChangeChecked(!bool)
+//         setBool(!bool)
+//
+//     }
+    let [bool, setBool] = useState<boolean>(checked)
     const onChangeCallback = (e:ChangeEvent<HTMLInputElement>) => {
-        let bool:boolean=e.currentTarget.checked
-        onChangeChecked?.(bool)
+        // let bool:boolean=e.currentTarget.checked
+        onChangeChecked?.(!bool)
         onChange?.(e)
-        // restProps.onChangeChecked(!bool)
-        // setBool(!bool)
-
+        setBool(!bool)
     }
 
     const finalInputClassName = s.checkbox
