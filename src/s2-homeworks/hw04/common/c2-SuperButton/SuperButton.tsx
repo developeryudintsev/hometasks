@@ -1,4 +1,4 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps, useEffect} from 'react'
+import React, {ButtonHTMLAttributes, DetailedHTMLProps} from 'react'
 import s from './SuperButton.module.css'
 
 // тип пропсов обычной кнопки, children в котором храниться название кнопки там уже описан
@@ -8,32 +8,20 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 type SuperButtonPropsType = DefaultButtonPropsType & {
     id:string
     xType?: string
-    disabled?:boolean
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (
     {
         id,
         xType,
-        // className,
+        className,
         disabled,
         ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
     }
 ) => {
-    let classN=id?.split('-')[id.split('-').length-1]
-    let finalClassName ;
-    // console.log( xType, disabled)
-    if (classN=='secondary'){
-        finalClassName=s.secondary
-    }else if(classN=='disabled'){
-        finalClassName=s.disabled
-    }else if(classN=='red'){
-        finalClassName=s.red
-    }else if(classN=='default'){
-        finalClassName=s.default
-    }
-    console.log(finalClassName,'#hw4-super-button-red')
-
+    const finalClassName =  disabled?s.disabled:xType === 'red'?s.red:id=='hw4-super-button-default'?s.default:s.secondary
+        // + (className ? ' ' + className : '') // задачка на смешивание классов
+    console.log(finalClassName)
     return (
         <button
             id={id}
