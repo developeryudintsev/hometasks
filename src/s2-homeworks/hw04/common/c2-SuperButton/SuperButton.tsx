@@ -32,9 +32,11 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     }else if(classN=='default'){
         finalClassName=s.default
     }
+    console.log(finalClassName,'#hw4-super-button-red')
 
     return (
         <button
+            id={id}
             disabled={disabled}
             className={finalClassName}
             {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)

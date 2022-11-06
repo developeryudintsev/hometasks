@@ -27,7 +27,6 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     }
 ) => {
         let [bool, setBool] = useState<any>(checked)
-    console.log(bool)
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChangeChecked(!bool)
         onChange(e)
