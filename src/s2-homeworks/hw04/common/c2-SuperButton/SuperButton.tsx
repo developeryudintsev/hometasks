@@ -6,7 +6,9 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
     HTMLButtonElement>
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
+    id:string
     xType?: string
+    disabled?:boolean
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (

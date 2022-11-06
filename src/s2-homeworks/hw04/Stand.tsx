@@ -44,37 +44,34 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    {/*обычная кнопка:*/}
-                    <div>
-                        <SuperButton id={'hw4-super-button-default'}>
-                            default
-                        </SuperButton>
-                    </div>
-                    {/*красная кнопка:*/}
-                    <div>
-                        <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                            red
-                        </SuperButton>
-                    </div>
-                    {/*задизэйбленная кнопка:*/}
-                    <div>
-                        <SuperButton
-                            id={'hw4-super-button-disabled'}
-                            xType={'red'}
-                            disabled
-                        >
-                            disabled
-                        </SuperButton>
-                    </div>
-                    {/*задизэйбленная кнопка:*/}
-                    <div>
-                        <SuperButton
-                            id={'hw4-super-button-secondary'}
-                            xType={'secondary'}
-                        >
-                            secondary
-                        </SuperButton>
-                    </div>
+                    <SuperButton id={'hw4-super-button-default'}>
+                        default
+                    </SuperButton>
+                </div>
+                {/*красная кнопка:*/}
+                <div>
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
+                        red
+                    </SuperButton>
+                </div>
+                {/*задизэйбленная кнопка:*/}
+                <div>
+                    <SuperButton
+                        id={'hw4-super-button-disabled'}
+                        xType={'red'}
+                        disabled
+                    >
+                        disabled
+                    </SuperButton>
+                </div>
+                {/*задизэйбленная кнопка:*/}
+                <div>
+                    <SuperButton
+                        id={'hw4-super-button-secondary'}
+                        xType={'secondary'}
+                    >
+                        secondary
+                    </SuperButton>
                 </div>
             </div>
             <div className={s.checkboxes}>
@@ -97,24 +94,6 @@ const Stand = () => {
                         onChangeChecked={setChecked}
                     />
                 </div>
-                {/*<div>*/}
-                {/*    <SuperCheckbox*/}
-                {/*        id={'hw4-super-checkbox-with-text'}*/}
-                {/*        checked={stateForAllCheckboxes}*/}
-                {/*        onChangeChecked={setChecked}*/}
-                {/*    >*/}
-                {/*        some text*/}
-                {/*    </SuperCheckbox>*/}
-                {/*</div>*/}
-                {/*/!*совместим со старым кодом:*!/*/}
-                {/*<div>*/}
-                {/*    <SuperCheckbox*/}
-                {/*        id={'hw4-super-checkbox-like-old'}*/}
-                {/*        checked={stateForAllCheckboxes}*/}
-                {/*        onChangeChecked={setChecked}*/}
-                {/*        onChange={(e) => setChecked(e.currentTarget.checked)}*/}
-                {/*    />*/}
-                {/*</div>*/}
             </div>
         </div>
     )
