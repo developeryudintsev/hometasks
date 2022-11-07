@@ -16,7 +16,6 @@ const Stand = () => {
             setValue('')
         }
     }
-    console.log(stateForAllCheckboxes)
     return (
         <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>

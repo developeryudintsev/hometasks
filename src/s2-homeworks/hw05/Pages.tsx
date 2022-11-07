@@ -1,9 +1,10 @@
 import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import {Navigate, NavLink, Route, Routes, useLocation} from 'react-router-dom'
+import HW1 from '../hw01/HW1';
 import Error404 from './pages/Error404'
-import PreJunior from './pages/PreJunior'
-import Junior from './pages/Junior'
-import JuniorPlus from './pages/JuniorPlus'
+import s from "./sidebar/Sidebar.module.css";
+import HW2 from "../hw02/HW2";
+import HW3 from "../hw03/HW3";
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
@@ -12,21 +13,28 @@ export const PATH = {
 }
 
 function Pages() {
+    const location = useLocation()
+    const currentPath = location.pathname
+    console.log(currentPath)
     return (
         <div>
             {/*Routes выбирает первый подходящий роут*/}
             <Routes>
                 {/*роутинг будут писать студенты*/}
                 {/*в начале мы попадаем на страницу '/' и переходим сразу на страницу /pre-junior*/}
-                {/*<Route ...*/}
+                {/*{currentPath == '/'*/}
+                {/*    ?  <Navigate to="/pre-junior" />*/}
+                {/*    : ''}*/}
+                <Route path={'/'} element={<Navigate to="pre-junior" />}/>
+
+
 
                 {/*роуты для /pre-junior, /junior, /junior-plus*/}
-                {/*<Route ...*/}
-                {/*<Route ...*/}
-                {/*<Route ...*/}
-
+                <Route path={'/pre-junior'} element={<HW1/>}/>
+                <Route path={'/junior'} element={<HW2/>}/>
+                <Route path={'/junior-plus'} element={<HW3/>}/>
                 {/*роут для несуществующей страницы должен отрисовать <Error404 />*/}
-                {/*<Route ...*/}
+                <Route path={'*'} element={<Error404></Error404>}/>
             </Routes>
         </div>
     )
