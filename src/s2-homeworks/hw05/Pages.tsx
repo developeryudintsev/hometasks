@@ -1,8 +1,7 @@
 import React from 'react'
-import {Navigate, NavLink, Route, Routes, useLocation} from 'react-router-dom'
+import {Navigate, Route, Routes, useLocation} from 'react-router-dom'
 import HW1 from '../hw01/HW1';
 import Error404 from './pages/Error404'
-import s from "./sidebar/Sidebar.module.css";
 import HW2 from "../hw02/HW2";
 import HW3 from "../hw03/HW3";
 
@@ -25,14 +24,12 @@ function Pages() {
                 {/*{currentPath == '/'*/}
                 {/*    ?  <Navigate to="/pre-junior" />*/}
                 {/*    : ''}*/}
-                <Route path={'/'} element={<Navigate to="pre-junior" />}/>
-
-
+                <Route path={'/'} element={<Navigate to={PATH.PRE_JUNIOR} />}/>
 
                 {/*роуты для /pre-junior, /junior, /junior-plus*/}
-                <Route path={'/pre-junior'} element={<HW1/>}/>
-                <Route path={'/junior'} element={<HW2/>}/>
-                <Route path={'/junior-plus'} element={<HW3/>}/>
+                <Route path={PATH.PRE_JUNIOR} element={<HW1/>}/>
+                <Route path={PATH.JUNIOR} element={<HW2/>}/>
+                <Route path={PATH.JUNIOR_PLUS} element={<HW3/>}/>
                 {/*роут для несуществующей страницы должен отрисовать <Error404 />*/}
                 <Route path={'*'} element={<Error404></Error404>}/>
             </Routes>
