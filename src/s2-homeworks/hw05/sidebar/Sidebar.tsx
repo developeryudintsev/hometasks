@@ -1,23 +1,26 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
 import s from './Sidebar.module.css'
 import {PATH} from '../Pages'
 import closeIcon from './closeOutline.svg'
 
 type PropsType = {
+    id:string
     open: boolean
     handleClose: () => void
 }
 
-export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
+export const Sidebar: FC<PropsType> = ({id,open, handleClose}) => {
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
+    const location = useLocation()
+    const currentPath = location.pathname
     return (
         <>
             {/*затемнение справа от открытого меню*/}
-            {open && <div id={'#hw5-burger-menu'} className={s.background} onClick={handleClose}/>}
+            {open && <div id={id} className={s.background} onClick={handleClose}/>}
 
-            <aside className={sidebarClass}>
+            <aside id={id} className={sidebarClass}>
                 <button className={s.close} onClick={handleClose}>
                     <img
                         src={closeIcon}
@@ -31,7 +34,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                             id={'hw5-pre-junior-link'}
                             to={'/pre-junior'}
                             onClick={handleClose}
-                            className={s.nav1} // делает студент
+                            className={currentPath=='/pre-junior'?s.nav1active:s.nav1} // делает студент
                         >
                             Pre-junior
                         </NavLink>
@@ -39,7 +42,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                             id={'hw5-junior-link'}
                             to={'/junior'}
                             onClick={handleClose}
-                            className={s.nav2} // делает студент
+                            className={currentPath=='/junior'?s.nav2active:s.nav2} // делает студент
                         >
                             Junior
                         </NavLink>
@@ -47,7 +50,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                             id={'hw5-junior-plus-link'}
                             to={'/junior-plus'}
                             onClick={handleClose}
-                            className={s.nav3} // делает студент
+                            className={currentPath=='/junior-plus'?s.nav3active:s.nav3} // делает студент
                         >
                             Junior Plus
                         </NavLink>

@@ -44,7 +44,11 @@ export const deleteAffair = (affairs: AffairType[], _id: number) => { // need to
     return affairs.filter(f=>f._id!==_id) // need to fix
 }
 
-function HW2() {
+type hw2type={
+    id?:string
+}
+
+function HW2(props:hw2type) {
     const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
     // console.log(affairs)
@@ -56,7 +60,7 @@ function HW2() {
     }
 
     return (
-        <div id={'hw2'} className={s2.hw2}>
+        <div id={props.id==''?'hw2':props.id} className={s2.hw2}>
             <div className={s2.hwTitle}>Homework #2</div>
             <div className={s2.hw}>
                 <Affairs

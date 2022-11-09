@@ -27,9 +27,9 @@ function Pages() {
                 <Route path={'/'} element={<Navigate to={PATH.PRE_JUNIOR} />}/>
 
                 {/*роуты для /pre-junior, /junior, /junior-plus*/}
-                <Route path={PATH.PRE_JUNIOR} id={'hw5-pre-junior-link'} element={<HW1/>}/>
-                <Route path={PATH.JUNIOR} id={'hw5-junior-link'} element={<HW2/>}/>
-                <Route path={PATH.JUNIOR_PLUS} id={'hw5-junior-plus-link'} element={<HW3/>}/>
+                <Route path={PATH.PRE_JUNIOR} id={'#hw5-pre-junior-link'} element={<HW1 id={'hw5-pre-junior-link'}/>}/>
+                <Route path={PATH.JUNIOR} id={'#hw5-junior-link'} element={<HW2 id={'hw5-junior-link'} />}/>
+                <Route path={PATH.JUNIOR_PLUS} id={'#hw5-junior-plus-link'} element={<HW3 id={'hw5-junior-plus-link'}/>}/>
                 {/*роут для несуществующей страницы должен отрисовать <Error404 />*/}
                 <Route path={'*'} element={<Error404></Error404>}/>
             </Routes>

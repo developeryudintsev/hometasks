@@ -33,7 +33,11 @@ export const pureAddUserCallback = (name: string, setUsers:(users:UserType[])=>v
     setUsers([...users, user])
 }
 
-const HW3 = () => {
+type hw3type={
+    id?:string
+}
+
+const HW3 = (props:hw3type) => {
     const [users, setUsers] = useState<UserType[]>([]) // need to fix any
     const addUserCallback = (name: string) => { // need to fix any
         pureAddUserCallback(name, setUsers, users)
@@ -41,7 +45,7 @@ const HW3 = () => {
     }
 
     return (
-        <div id={'hw3'} className={s2.hw3}>
+        <div id={props.id==''?'hw3':props.id} className={s2.hw3}>
             <div className={s2.hwTitle}>Homework #3</div>
             {/*для автоматической проверки дз (не менять)*/}
 

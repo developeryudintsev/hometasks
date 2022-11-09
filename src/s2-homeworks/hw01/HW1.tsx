@@ -51,9 +51,13 @@ export const friendMessage0: MessageType = {
     },
 }
 
- const HW1 = () => {
+type hw1Type={
+    id?:string
+}
+
+ const HW1 = (props:hw1Type) => {
     return (
-        <div id={'hw1'}>
+        <div id={props.id==''?'hw1':props.id}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
