@@ -45,7 +45,7 @@ const HW3 = (props:hw3type) => {
     }
 
     return (
-        <div id={props.id==''?'hw3':props.id} className={s2.hw3}>
+        <div id={props.id} className={s2.hw3}>
             <div className={s2.hwTitle}>Homework #3</div>
             {/*для автоматической проверки дз (не менять)*/}
 

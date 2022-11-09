@@ -60,7 +60,7 @@ function HW2(props:hw2type) {
     }
 
     return (
-        <div id={props.id==''?'hw2':props.id} className={s2.hw2}>
+        <div id={props.id} className={s2.hw2}>
             <div className={s2.hwTitle}>Homework #2</div>
             <div className={s2.hw}>
                 <Affairs

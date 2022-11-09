@@ -57,7 +57,7 @@ type hw1Type={
 
  const HW1 = (props:hw1Type) => {
     return (
-        <div id={props.id==''?'hw1':props.id}>
+        <div id={props.id}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
