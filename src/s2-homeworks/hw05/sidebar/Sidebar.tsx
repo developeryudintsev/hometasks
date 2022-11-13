@@ -29,9 +29,9 @@ export const Sidebar: FC<PropsType> = ({id,open, handleClose}) => {
                     />
                 </button>
                 {open &&
-                    <nav id={'hw5-menu'} className={s.nav}>
+                    <nav id={'#hw5-menu'} className={s.nav}>
                         <NavLink
-                            id={'hw5-pre-junior-link'}
+                            id={'#hw5-pre-junior-link'}
                             to={'/pre-junior'}
                             onClick={handleClose}
                             className={currentPath=='/pre-junior'?s.nav1active:s.nav1} // делает студент
