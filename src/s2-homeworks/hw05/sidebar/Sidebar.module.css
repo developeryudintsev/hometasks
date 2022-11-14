@@ -153,7 +153,7 @@
 
     color: #58ACFF;
 }
-.nav3active {
+.nav3:active{
     position: absolute;
     left: 0px;
     top: 150px;

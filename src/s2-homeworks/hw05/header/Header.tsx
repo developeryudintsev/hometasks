@@ -6,14 +6,13 @@ import {PATH} from '../Pages'
 
 type PropsType = {
     id:string
-    handleOpen: () => void
+    handleOpen: (value:string) => void
 }
 
 export const Header: FC<PropsType> = ({id,handleOpen}) => {
     // hw5-menu изначально отсутствует, при нажатии на бургер - появляется, при повторном нажатии исчезает
     const location = useLocation()
     const currentPath = location.pathname
-    console.log( currentPath)
     const pageName =
         currentPath === PATH.PRE_JUNIOR
             ? 'Pre-junior'
@@ -29,7 +28,7 @@ export const Header: FC<PropsType> = ({id,handleOpen}) => {
                     src={burgerIcon}
                     id={'hw5-burger-menu'}
                     className={s.burgerMenuIcon}
-                    onClick={handleOpen}
+                    onClick={()=>handleOpen('hw5-burger-menu')}
                     alt={'open menu'}
                 />
                 <h1>{pageName}</h1>

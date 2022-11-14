@@ -14,7 +14,6 @@ export const PATH = {
 function Pages() {
     const location = useLocation()
     const currentPath = location.pathname
-    console.log(currentPath)
     return (
         <div>
             {/*Routes выбирает первый подходящий роут*/}

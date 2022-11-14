@@ -1,6 +1,8 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react'
 import { Header } from '../header/Header'
 import { Sidebar } from '../sidebar/Sidebar'
+import style from '../sidebar/Sidebar.module.css'
+
 
 type PropsType = {
     children: ReactNode
@@ -8,8 +10,15 @@ type PropsType = {
 
 export const Layout: FC<PropsType> = ({ children }) => {
     const [open, setOpen] = useState(false)
-    const handleClose = () => setOpen(false)
-    const handleOpen = () => setOpen(true)
+    let [newid,setnewid]=useState('hw5-menu')
+    const handleClose = (value:string) =>{
+        setOpen(false)
+        setnewid(value)
+    }
+    const handleOpen = (value:string) =>{
+        setOpen(true)
+        setnewid(value)
+    }
 
     useEffect(() => {
         open && (document.body.style.overflow = 'hidden')
@@ -18,9 +27,9 @@ export const Layout: FC<PropsType> = ({ children }) => {
 
     return (
         <>
-            <Sidebar id={'#hw5-menu'} open={open} handleClose={handleClose} />
+            <Sidebar id={newid} open={open} handleClose={handleClose} setnewid={setnewid} />
             {open==false && <Header id={'#hw5-menu'} handleOpen={handleOpen} />}
-            <div>
+            <div className={style.nav3}>
                 {/*страницы*/}
                 {children}
             </div>
