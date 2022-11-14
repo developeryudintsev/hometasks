@@ -28,7 +28,7 @@ export const Layout: FC<PropsType> = ({ children }) => {
     return (
         <>
             <Sidebar id={newid} open={open} handleClose={handleClose} setnewid={setnewid} />
-            {open==false && <Header id={'#hw5-menu'} handleOpen={handleOpen} />}
+            {open==false && <Header id={newid} handleOpen={handleOpen} />}
             <div className={style.nav3}>
                 {/*страницы*/}
                 {children}
