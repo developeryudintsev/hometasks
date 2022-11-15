@@ -26,19 +26,41 @@ z-index: 10;
 }
 
 .nav {
-
-    width: 100px;
+    width: 200px;
     height: 300px;
     margin-left:70px;
-    margin-top:100px
+    margin-top:100px;
 }
 
 .nav a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
 
+    text-decoration: none;
+    color: #000000;
 }
 .nav a:hover {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+
+    text-decoration: none;
+    color: #58ACFF;
 }
 .nav a.active {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
 }
 
 .close {
