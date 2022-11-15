@@ -4,6 +4,9 @@ import HW1 from '../hw01/HW1';
 import Error404 from './pages/Error404'
 import HW2 from "../hw02/HW2";
 import HW3 from "../hw03/HW3";
+import PreJunior from "./pages/PreJunior";
+import Junior from "./pages/Junior";
+import JuniorPlus from "./pages/JuniorPlus";
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
@@ -26,9 +29,9 @@ function Pages() {
                 <Route path={'/'} element={<Navigate to={PATH.PRE_JUNIOR} />}/>
 
                 {/*роуты для /pre-junior, /junior, /junior-plus*/}
-                <Route path={PATH.PRE_JUNIOR} id={'#hw5-pre-junior-link'} element={<HW1 id={'hw5-pre-junior-link'}/>}/>
-                <Route path={PATH.JUNIOR} id={'#hw5-junior-link'} element={<HW2 id={'hw5-junior-link'} />}/>
-                <Route path={PATH.JUNIOR_PLUS} id={'#hw5-junior-plus-link'} element={<HW3 id={'hw5-junior-plus-link'}/>}/>
+                <Route path={PATH.PRE_JUNIOR} element={<PreJunior/>}/>
+                <Route path={PATH.JUNIOR} element={<Junior/>}/>
+                <Route path={PATH.JUNIOR_PLUS} element={<JuniorPlus/>}/>
                 {/*роут для несуществующей страницы должен отрисовать <Error404 />*/}
                 <Route path={'*'} element={<Error404></Error404>}/>
             </Routes>
