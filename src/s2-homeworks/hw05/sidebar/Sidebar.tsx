@@ -16,43 +16,44 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
         <>
             {/*затемнение справа от открытого меню*/}
             {open && <div className={s.background} onClick={handleClose}/>}
+            {open &&
+                <aside className={sidebarClass}>
+                    <button className={s.close} onClick={handleClose}>
+                        <img
+                            src={closeIcon}
+                            alt="close sidebar"
+                            id={'hw5-menu-close'}
+                        />
+                    </button>
 
-            <aside className={sidebarClass}>
-                <button className={s.close} onClick={handleClose}>
-                    <img
-                        src={closeIcon}
-                        alt="close sidebar"
-                        id={'hw5-menu-close'}
-                    />
-                </button>
-
-                <nav id={'hw5-menu'} className={s.nav}>
-                    <NavLink
-                        id={'hw5-pre-junior-link'}
-                        to={PATH.PRE_JUNIOR}
-                        onClick={handleClose}
-                        // className={...} // делает студент
-                    >
-                        Pre-junior
-                    </NavLink>
-                    <NavLink
-                        id={'hw5-junior-link'}
-                        to={PATH.JUNIOR}
-                        onClick={handleClose}
-                        // className={...} // делает студент
-                    >
-                        Junior
-                    </NavLink>
-                    <NavLink
-                        id={'hw5-junior-plus-link'}
-                        to={PATH.JUNIOR_PLUS}
-                        onClick={handleClose}
-                        // className={...} // делает студент
-                    >
-                        Junior Plus
-                    </NavLink>
-                </nav>
-            </aside>
+                    <nav id={'hw5-menu'} className={s.nav}>
+                        <NavLink
+                            id={'hw5-pre-junior-link'}
+                            to={PATH.PRE_JUNIOR}
+                            onClick={handleClose}
+                            className={s.nav1} // делает студент
+                        >
+                            Pre-junior
+                        </NavLink>
+                        <NavLink
+                            id={'hw5-junior-link'}
+                            to={PATH.JUNIOR}
+                            onClick={handleClose}
+                            className={s.nav2} // делает студент
+                        >
+                            Junior
+                        </NavLink>
+                        <NavLink
+                            id={'hw5-junior-plus-link'}
+                            to={PATH.JUNIOR_PLUS}
+                            onClick={handleClose}
+                            className={s.nav3} // делает студент
+                        >
+                            Junior Plus
+                        </NavLink>
+                    </nav>
+                </aside>
+            }
         </>
     )
 }
