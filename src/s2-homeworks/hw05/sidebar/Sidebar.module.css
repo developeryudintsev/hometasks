@@ -26,26 +26,12 @@ z-index: 10;
 }
 
 .nav {
-    width: 70px;
+    width: 100px;
     height: 300px;
-}
-.nav1 {
-    position: absolute;
-    top:90px;
-    left:70px
-}
-.nav2 {
-    position: absolute;
-    top:120px;
-    left:70px
-}
-.nav3 {
-    position: absolute;
-    top:150px;
-    left:70px
 }
 
 .nav a {
+
 }
 .nav a:hover {
 }
