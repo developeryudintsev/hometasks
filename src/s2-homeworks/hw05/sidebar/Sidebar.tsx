@@ -7,11 +7,10 @@ import closeIcon from './closeOutline.svg'
 type PropsType = {
     id:string
     open: boolean
-    handleClose: (value:string) => void
-    setnewid:(newid:string)=>void
+    handleClose: () => void
 }
 
-export const Sidebar: FC<PropsType> = ({id,open, handleClose,setnewid}) => {
+export const Sidebar: FC<PropsType> = ({id,open, handleClose}) => {
 
     const sidebarClass = s.sidebar
         + (open ? ' ' + s.open : '')
@@ -20,10 +19,7 @@ export const Sidebar: FC<PropsType> = ({id,open, handleClose,setnewid}) => {
     let resid=id
     console.log(resid)
     let closefunction=()=>{
-        handleClose('hw5-menu-close')
-    }
-    let navfunction=(nav:string)=>{
-        handleClose(nav)
+        handleClose()
     }
 
     return (
@@ -44,27 +40,34 @@ export const Sidebar: FC<PropsType> = ({id,open, handleClose,setnewid}) => {
                         <NavLink
                             id={'#hw5-pre-junior-link'}
                             to={'/pre-junior'}
-                            onClick={()=>navfunction('hw5-pre-junior-link')}
-                            className={currentPath=='/pre-junior'?s.nav1active:s.nav1} // делает студент
+                            onClick={closefunction}
+                            // className={s.nav1}
+                            className={(isActive)=>isActive.isActive?s.nav1active:s.nav1}
+                             // делает студент
                         >
                             Pre-junior
                         </NavLink>
+                        <div></div>
                         <NavLink
                             id={'hw5-junior-link'}
                             to={'/junior'}
-                            onClick={()=>navfunction('hw5-junior-link')}
-                            className={currentPath=='/junior'?s.nav2active:s.nav2} // делает студент
+                            onClick={closefunction}
+                            // className={s.nav2}
+                            className={(isActive)=>isActive.isActive?s.nav2active:s.nav2} // делает студент
                         >
                             Junior
                         </NavLink>
+                        <div></div>
                         <NavLink
                             id={'hw5-junior-plus-link'}
                             to={'/junior-plus'}
-                            onClick={()=>navfunction('hw5-junior-plus-link')}
-                            className={s.nav3} // делает студент
+                            onClick={closefunction}
+                            // className={s.nav3}
+                            className={(isActive)=>isActive.isActive?s.nav3active:s.nav3} // делает студент
                         >
                             Junior Plus
                         </NavLink>
+                        <div></div>
                     </nav>
                 }
             </aside>

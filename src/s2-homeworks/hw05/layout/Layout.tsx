@@ -10,14 +10,11 @@ type PropsType = {
 
 export const Layout: FC<PropsType> = ({ children }) => {
     const [open, setOpen] = useState(false)
-    let [newid,setnewid]=useState('hw5-menu')
-    const handleClose = (value:string) =>{
+    const handleClose = () =>{
         setOpen(false)
-        setnewid(value)
     }
-    const handleOpen = (value:string) =>{
+    const handleOpen = () =>{
         setOpen(true)
-        setnewid(value)
     }
 
     useEffect(() => {
@@ -27,8 +24,8 @@ export const Layout: FC<PropsType> = ({ children }) => {
 
     return (
         <>
-            <Sidebar id={newid} open={open} handleClose={handleClose} setnewid={setnewid} />
-            {open==false && <Header id={newid} handleOpen={handleOpen} />}
+            <Sidebar id={'hw5-burger-menu'} open={open} handleClose={handleClose}  />
+            {open==false && <Header id={'hw5-menu'} handleOpen={handleOpen} />}
             <div className={style.nav3}>
                 {/*страницы*/}
                 {children}
