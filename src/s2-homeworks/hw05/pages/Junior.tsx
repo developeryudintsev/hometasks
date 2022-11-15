@@ -7,7 +7,6 @@ import React from 'react'
 function Junior() {
     return (
         <div id={'hw5-page-junior'}>
-            Junior
             {/*<HW6 />*/}
             {/*<HW7 />*/}
             {/*<HW8 />*/}
