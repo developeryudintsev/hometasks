@@ -36,27 +36,34 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
+    const [error, setError] = useState('')
     const [editMode, setEditMode] = useState<boolean>(false)
     const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
     spanProps || {}
 
-    const onEnterCallback = () => {
+    const onEnterCallback = (value:any) => {
         // выключить editMode при нажатии Enter // делают студенты
-
-        onEnter?.()
+        if(value.trim()=='') {
+            setError('Ошибка! Введите имя!')
+        }else {
+            console.log(value)
+            setEditMode(!editMode)
+            onEnter?.()
+        }
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
-
+        setEditMode(!editMode)
         onBlur?.(e)
     }
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
         // включить editMode при двойном клике // делают студенты
-
+        setEditMode(!editMode)
         onDoubleClick?.(e)
     }
+
 
     const spanClassName = s.span
         + (className ? ' ' + className : '')
@@ -68,10 +75,13 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                 // @ts-ignore
 
                 <SuperInputText
+                    error={error}
+                    setError={setError}
                     autoFocus={autoFocus || true}
                     onBlur={onBlurCallback}
                     onEnter={onEnterCallback}
                     className={s.input}
+
                     {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
                 />
             ) : (
@@ -79,6 +89,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                     <img
                         src={editIcon}
                         className={s.pen}
+                        onClick={()=>setEditMode(!editMode)}
                         alt={'edit'}
                     />
                     <span

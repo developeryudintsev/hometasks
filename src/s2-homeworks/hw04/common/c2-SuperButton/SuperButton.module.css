@@ -1,8 +1,25 @@
 .button {
-background-color: #cc9c00;
+border:#004D99;
     width: 149px;
     height: 30px;
-    left:-10px
+}
+.edButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 24px;
+    gap: 10px;
+
+    position: absolute;
+    width: 149px;
+    height: 30px;
+    left: 40px;
+    top: 30px;
+
+    border-radius: 3px;
+    border: #0080FF;
+    color: #0066CC;
 }
 
 .disabled{
@@ -19,7 +36,7 @@ background-color: #cc9c00;
     background-color: #004D99;
 }
 
-.button secondary {
+.secondary {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -30,11 +47,11 @@ background-color: #cc9c00;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 194px;
-    top: 10px;
+    left: 200px;
+    top: 30px;
 
-    background:#0066CC;
     border-radius: 3px;
+    background: #0080FF;
 }
 
 .button default {
@@ -130,8 +147,8 @@ background-color: #cc9c00;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 201px;
-    top: 162px;
+    left: 200px;
+    top: 30px;
 
     border-radius: 3px;
     background: #0080FF;
@@ -167,8 +184,8 @@ background-color: #cc9c00;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 201px;
-    top: 162px;
+    left: 200px;
+    top: 30px;
 
     border-radius: 3px;
     background:#0059B3

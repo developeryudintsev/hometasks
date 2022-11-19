@@ -14,9 +14,9 @@
     box-sizing: border-box;
 
     position: absolute;
-    left: 0%;
+    left: 3%;
 
-    top: 75px;
+    /*top: 75px;*/
 
     width: 170px;
     height: 30px;
@@ -30,10 +30,10 @@
 
 .error {
     position: absolute;
-    width: 35px;
+    width: 165px;
     height: 17px;
-    left: 0px;
-    top: 57px;
+    left: 60px;
+    top: 62px;
 
     font-family: 'Montserrat';
     font-style: normal;
