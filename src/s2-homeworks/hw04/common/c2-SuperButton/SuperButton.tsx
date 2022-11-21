@@ -27,6 +27,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     }
     return (
         <div className={s.button}>
+            <div></div>
         <button
             id={id}
             disabled={disabled}

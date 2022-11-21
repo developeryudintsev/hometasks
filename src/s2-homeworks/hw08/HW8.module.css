@@ -5,19 +5,60 @@
 }
 
 .users {
+    margin-left: 100px;
 }
 
 .buttonsContainer {
+
+    margin-left: 650px;
 }
 
 .container {
 }
 
 .thead {
+    position: absolute;
+    width: 606px;
+    height: 36px;
+    left: 70px;
+    top:40px;
+
+    background: #E5E5E5;
+
 }
 
 .nameCol {
 }
 
 .ageCol {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 498px;
+    /*top: 1144px;*/
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.ageCol2 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 420px;
+    /*top: 1144px;*/
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
 }

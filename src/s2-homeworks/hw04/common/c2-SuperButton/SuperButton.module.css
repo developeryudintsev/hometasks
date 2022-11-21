@@ -47,9 +47,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 200px;
-    top: 30px;
-
+    margin:40px 150px;
     border-radius: 3px;
     background: #0080FF;
 }
@@ -147,8 +145,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 200px;
-    top: 30px;
+    margin:40px 150px;
 
     border-radius: 3px;
     background: #0080FF;
@@ -184,8 +181,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 200px;
-    top: 30px;
+    margin:40px 150px;
 
     border-radius: 3px;
     background:#0059B3
