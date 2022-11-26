@@ -1,9 +1,12 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import {restoreState} from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
 function Clock() {
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var months = ["January", "February", "March", "April", "May", "June",
+        'July', 'August', 'September', 'October', 'November', 'December'];
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     const [timer, setTimer] = useState<any>()
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
@@ -17,7 +20,7 @@ function Clock() {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
         setTimer(setInterval(() =>{setDate(new Date(restoreState('hw9-date', Date.now())))
-            }, 1000))
+        }, 1000))
         setstopButn(false)
         setstartButn(true)
     }
@@ -38,11 +41,12 @@ function Clock() {
     }
 
     const stringTime = `${date}`.split(' ')[4] || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${date}`.split(' ')[2] || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = `${date}`.split(' ')[2]+ "." + `${Number(new Date().getMonth())+1}` +
+        "." + new Date().getFullYear() || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = `${date}`.split(' ')[0] || <br/> // пишут студенты
-    const stringMonth = `${date}`.split(' ')[1] || <br/> // пишут студенты
+    const stringDay = days[new Date().getDay()] || <br/> // пишут студенты
+    const stringMonth = months[new Date().getMonth()] || <br/> // пишут студенты
 
     return (
         <div className={s.clock}>
