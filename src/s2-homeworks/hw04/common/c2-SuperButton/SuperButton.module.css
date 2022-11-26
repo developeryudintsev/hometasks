@@ -14,20 +14,18 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 40px;
-    top: 30px;
+    margin: 15px -30px;
 
     border-radius: 3px;
-    border: #0080FF;
-    color: #0066CC;
+    background-color: #0080FF;
 }
 
 .disabled{
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 194px;
-    top: 100px;
+    margin: -45px -230px;
+
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -47,7 +45,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    margin:40px 150px;
+    margin:-15px 125px;
     border-radius: 3px;
     background: #0080FF;
 }
@@ -67,8 +65,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    left: 194px;
-    top: 152px;
+    margin: -45px -230px;
 
     background: #C9E5FF;
     border: 1px solid #0066CC;
@@ -145,8 +142,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    margin:40px 150px;
-
+    margin:-15px 125px;
     border-radius: 3px;
     background: #0080FF;
 }
@@ -181,8 +177,7 @@ border:#004D99;
     position: absolute;
     width: 149px;
     height: 30px;
-    margin:40px 150px;
-
+    margin:-15px 125px;
     border-radius: 3px;
     background:#0059B3
 }

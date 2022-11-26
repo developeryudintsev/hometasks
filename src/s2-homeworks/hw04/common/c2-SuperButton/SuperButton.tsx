@@ -25,6 +25,10 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     if(xType=='edButton'){
         finalClassName=s.edButton
     }
+    if(xType=='secondary'){
+        finalClassName=s.secondary
+
+    }
     return (
         <div className={s.button}>
             <div></div>
