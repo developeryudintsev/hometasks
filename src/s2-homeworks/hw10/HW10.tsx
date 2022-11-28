@@ -24,7 +24,9 @@ const HW10 = () => {
 dispatch(loadingAC(true))
         setisLoading(!isLoading)
         // setTimeout
-        setTimeout(()=>setisLoading(false),1500)
+        setTimeout(()=>{
+            dispatch(loadingAC(false))
+            setisLoading(false)},1500)
     }
 
     return (
