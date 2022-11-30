@@ -22,7 +22,9 @@ if (value.length==1){
 }
 if(value.length>1){
     // @ts-ignore
-    setValue1(event.target.value)
+    console.log(event.target.value)
+// @ts-ignore
+    setValue1(event.target.value[0])
     // @ts-ignore
     setValue2(event.target.value)
 }
