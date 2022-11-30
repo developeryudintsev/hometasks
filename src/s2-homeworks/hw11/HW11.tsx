@@ -13,7 +13,7 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 40))
-    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
+    const [value2, setValue2] = useState(restoreState<Array<number>>('hw11-value2', [value1,100]))
 
     const change = (event: Event, value: Array<number>) => {
 if (value.length==1){
