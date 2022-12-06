@@ -1,13 +1,16 @@
 .App {
     --header_height: 60px;
+    background-color: #DDEEFF;
+
 }
 
 .hw {
-    position: absolute;
-    width: 1280px;
-    height: 373px;
-    left: 0px;
-    top: 157px;
+    /*position: absolute;*/
+    /*width: 1280px;*/
+    /*height: 373px;*/
+    margin-left: 0px;
+    margin-top: 157px;
+
 }
 .hws4 {
     position: absolute;
