@@ -24,12 +24,12 @@ const HW12 = () => {
     const id = useSelector<AppStoreType, initStateType>(state => state.theme)
     const dispatch = useDispatch();
     let themeId = id
-    let backgroundColorClass=id.themeId==1?s.selectL:id.themeId==2?s.selectB:id.themeId==3?s.selectD:''
+
 
     const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(id))
     }
-    console.log(id.themeId==1?s.selectL:id.themeId==2?s.selectB:id.themeId==3?s.selectD:'')
+
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
@@ -40,7 +40,7 @@ const HW12 = () => {
                 Homework #12
             </div>
 
-            <div className={backgroundColorClass}>
+            <div >
                 change the team
                 <p></p>
                 <SuperSelect

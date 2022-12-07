@@ -17,22 +17,3 @@ html {
     background-color: var(--background);
     color: var(--color);
 }
-
-.selectL {
-    width: 100%;
-    height: 100%;
-
-background-color: #c9e5ff;
-}
-.selectB {
-    width: 100%;
-    height: 100%;
-
-    background-color: #DDEEFF;
-}
-.selectD {
-    width: 100%;
-    height: 100%;
-
-    background-color: #212A34;
-}
