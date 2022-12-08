@@ -5,7 +5,7 @@
 
 [data-theme='2'] {
     --color: #000000;
-    --background: #DDEEFF;
+    --background: #92bbff;
 }
 
 [data-theme='3'] {
@@ -40,6 +40,12 @@ html {
     height: 100%;
     left: 0px;
     top: 60px;
-
+    color: #FFFFFF;
     background: #212A34;
+}
+
+
+.select{
+    margin-top: 160px;
+    margin-left: 120px;
 }

@@ -46,16 +46,15 @@ const HW12 = () => {
     return (
         <div id={'hw12'} className={s2.hw} >
             <div className={classNameApp}>
-            <div id={'hw12-text'} className={s2.hwTitle}>
+            <div id={'hw12-text'} className={id.themeId==3?s2.hwTitle1:s2.hwTitle}>
                 Homework #12
             </div>
 
-            <div >
+            <div className={s.select} >
                 change the team
                 <p></p>
                 <SuperSelect
                     id={'hw12-select-theme'}
-                    className={s.select}
                     options={themes}
                     onChangeOption={change}
                     // сделать переключение тем
