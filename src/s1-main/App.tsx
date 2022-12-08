@@ -20,7 +20,7 @@ function App() {
         classNameApp=s.App3
     }
     return (
-        <div className={classNameApp}>
+        <div >
             {/*<HW1/>*/}
             {/*/!*раскомментировать по ходу выполнения*!/*/}
             {/*<HW2/>*/}
