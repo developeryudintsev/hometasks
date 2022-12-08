@@ -1,20 +1,27 @@
 .App1 {
-    --header_height: 60px;
+    position: absolute;
     width: 100%;
-    heigth:100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
     background-color: #FFFFFF;
 }
 .App2 {
-    --header_height: 60px;
+    position: absolute;
     width: 100%;
-    heigth:100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
     background-color: #DDEEFF;
 }
 .App3 {
-    --header_height: 60px;
+    position: absolute;
     width: 100%;
-    heigth:100%;
-    background-color: #212A34;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    background: #212A34;
 }
 
 .hw {
