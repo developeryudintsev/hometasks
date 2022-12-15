@@ -24,16 +24,6 @@ const HW12 = () => {
     const id = useSelector<AppStoreType, initStateType>(state => state.theme)
     const dispatch = useDispatch();
     let themeId = id
-    let classNameApp=s.App1
-    if(id.themeId==1){
-        classNameApp=s.App1
-    }
-    if(id.themeId==2){
-        classNameApp=s.App2
-    }
-    if(id.themeId==3){
-        classNameApp=s.App3
-    }
 
     const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(id))
@@ -45,9 +35,9 @@ const HW12 = () => {
     console.log()
     // data-theme=``
     return (
+        <html data-theme={`${id.themeId}`}>
         <div id={'hw12'} className={s2.hw} >
-            <div className={classNameApp}>
-            <div id={'hw12-text'} className={id.themeId==3?s2.hwTitle1:s2.hwTitle}>
+            <div id={'hw12-text'} className={s2.hwTitle2}>
                 Homework #12
             </div>
 
@@ -62,8 +52,8 @@ const HW12 = () => {
                     // сделать переключение тем
                 />
         </span>
-            </div>
         </div>
+        </html>
     )
 }
 
