@@ -42,7 +42,8 @@ const HW12 = () => {
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
-
+    console.log()
+    // data-theme=``
     return (
         <div id={'hw12'} className={s2.hw} >
             <div className={classNameApp}>
@@ -50,16 +51,17 @@ const HW12 = () => {
                 Homework #12
             </div>
 
-            <div className={s.select} >
+            <span className={s.select} >
                 change the team
                 <p></p>
                 <SuperSelect
                     id={'hw12-select-theme'}
+
                     options={themes}
                     onChangeOption={change}
                     // сделать переключение тем
                 />
-        </div>
+        </span>
             </div>
         </div>
     )

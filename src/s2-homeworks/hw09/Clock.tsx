@@ -58,7 +58,7 @@ function Clock() {
             >
                 <span id={'hw9-day'}>{stringDay}</span>,{' '}
                 <span id={'hw9-time'}>
-                    <strong>{stringTime}</strong>
+                    <strong >{stringTime}</strong>
                 </span>
             </div>
 

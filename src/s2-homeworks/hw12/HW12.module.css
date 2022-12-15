@@ -1,16 +1,28 @@
-[data-theme='1'] {
-    --color: #000000;
-    --background: #FFFFFF;
+html[data-theme='1'] {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 60px;
+    color: #000000;
+    background-color: #FFFFFF;
 }
 
-[data-theme='2'] {
-    --color: #000000;
-    --background: #92bbff;
+html[data-theme='2'] {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 60px;
+    color: #000000;
+    background-color: #FFFFFF;
 }
 
-[data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
+html[data-theme='3'] {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 60px;
+    color: #000000;
+    background-color: #FFFFFF;
 }
 
 html {
