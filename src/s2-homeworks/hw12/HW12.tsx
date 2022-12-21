@@ -33,27 +33,26 @@ const HW12 = () => {
         document.documentElement.dataset.theme = themeId + ''
     }, [themeId])
     console.log()
-    // data-theme=``
     return (
-        <html data-theme={`${id.themeId}`}>
+        // <html data-theme={`${id.themeId}`}>
         <div id={'hw12'} className={s2.hw} >
             <div id={'hw12-text'} className={s2.hwTitle2}>
                 Homework #12
             </div>
 
-            <span className={s.select} >
+            <span >
                 change the team
                 <p></p>
                 <SuperSelect
                     id={'hw12-select-theme'}
-
+                    className={s.select}
                     options={themes}
                     onChangeOption={change}
                     // сделать переключение тем
                 />
         </span>
         </div>
-        </html>
+        // </html>
     )
 }
 

@@ -8,12 +8,8 @@ import {initStateType} from "../s2-homeworks/hw12/bll/themeReducer";
 
 function App() {
     const id = useSelector<AppStoreType, initStateType>(state => state.theme)
-    let classNameApp=s.App1
-    console.log(id)
-
     return (
         <html data-theme={`${id.themeId}`}>
-        <div >
             {/*<HW1/>*/}
             {/*/!*раскомментировать по ходу выполнения*!/*/}
             {/*<HW2/>*/}
@@ -23,7 +19,6 @@ function App() {
 
             {/*при выполнении дз 5 и более - закомментировать здесь дз 1-4, так как они есть внутри дз 5*/}
             <HW5/>
-        </div>
         </html>
     )
 }
