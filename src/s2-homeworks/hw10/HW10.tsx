@@ -7,7 +7,6 @@ import s2 from '../../s1-main/App.module.css'
 import {Loader} from './Loader'
 
 const HW10 = () => {
-    // useSelector, useDispatch // пишет студент
     const loading = useSelector<AppStoreType, initStateType>(state => state.loading)
     const dispatch = useDispatch();
     const [isLoading,setisLoading] =useState(false)
