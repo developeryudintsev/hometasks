@@ -9,7 +9,7 @@ import {initStateType} from "../s2-homeworks/hw12/bll/themeReducer";
 function App() {
     const id = useSelector<AppStoreType, initStateType>(state => state.theme)
     return (
-        <html data-theme={`${id.themeId}`}>
+        <html data-theme={`${id.themeId}`} id={'html'}>
             {/*<HW1/>*/}
             {/*/!*раскомментировать по ходу выполнения*!/*/}
             {/*<HW2/>*/}
