@@ -10,16 +10,9 @@ function App() {
     const id = useSelector<AppStoreType, initStateType>(state => state.theme)
     let classNameApp=s.App1
     console.log(id)
-    if(id.themeId==1){
-        classNameApp=s.App1
-    }
-    if(id.themeId==2){
-        classNameApp=s.App2
-    }
-    if(id.themeId==3){
-        classNameApp=s.App3
-    }
+
     return (
+        <html data-theme={`${id.themeId}`}>
         <div >
             {/*<HW1/>*/}
             {/*/!*раскомментировать по ходу выполнения*!/*/}
@@ -31,6 +24,7 @@ function App() {
             {/*при выполнении дз 5 и более - закомментировать здесь дз 1-4, так как они есть внутри дз 5*/}
             <HW5/>
         </div>
+        </html>
     )
 }
 
