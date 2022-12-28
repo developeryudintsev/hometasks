@@ -34,7 +34,7 @@ const HW12 = () => {
     }, [themeId])
     console.log()
     return (
-        // <html data-theme={`${id.themeId}`}>
+        <html data-theme={`${id.themeId}`}>
         <div id={'hw12'} className={s2.hw} >
             <div id={'hw12-text'} className={s2.hwTitle2}>
                 Homework #12
@@ -51,7 +51,7 @@ const HW12 = () => {
                 />
         </span>
         </div>
-        // </html>
+         </html>
     )
 }
 
