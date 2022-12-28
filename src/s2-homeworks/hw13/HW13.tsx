@@ -29,7 +29,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText("it's ok")
+                setText("...всё ок")
                 setInfo('')
                 // дописать
 
@@ -38,13 +38,13 @@ const HW13 = () => {
                 if(e.response.status==500){
                     setCode('Код 500!')
                     setImage(error500)
-                    setText("it's bad")
+                    setText("эмитация ошибки на сервере")
                     setInfo('')
                 }
                 if(e.response.status==400){
                     setCode('Код 400!')
                     setImage(error400)
-                    setText("it's bad")
+                    setText("Ты не отправил success в body вообще!")
                     setInfo('')
                 }
                 if(e.response.status==0){
@@ -54,7 +54,7 @@ const HW13 = () => {
                     setImage(errorUnknown)
                 }
                 console.log(e.response.status)
-                // дописать
+
 
             })
     }
