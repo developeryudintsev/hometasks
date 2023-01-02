@@ -21,12 +21,12 @@ const Stand = () => {
             <div className={s.inputs}>
                 {/*совместим со старым кодом:*/}
                 <div>
-                    <SuperInputText
-                        id={'hw4-super-input-like-old'}
-                        value={stateForAllInputs}
-                        setError={setError}
-                        onChange={() => setValue}
-                    />
+                    {/*<SuperInputText*/}
+                    {/*    id={'hw4-super-input-like-old'}*/}
+                    {/*    value={stateForAllInputs}*/}
+                    {/*    setError={setError}*/}
+                    {/*    onChange={() => setValue}*/}
+                    {/*/>*/}
                 </div>
                 {/*инпут с ошибкой:*/}
                 <div>
