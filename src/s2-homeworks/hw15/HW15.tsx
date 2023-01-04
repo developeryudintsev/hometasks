@@ -47,13 +47,16 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: ParamsType) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
+                console.log(res)
                 // делает студент
-
+                //@ts-ignore
+                setTechs(res.data.techs)
                 // сохранить пришедшие данные
+                setLoading(false)
 
                 //
             })
@@ -61,9 +64,9 @@ const HW15 = () => {
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-
-        // setPage(
-        // setCount(
+        console.log(newPage,newCount)
+        setPage(newPage)
+        setCount(newCount)
 
         // sendQuery(
         // setSearchParams(
@@ -73,8 +76,7 @@ const HW15 = () => {
 
     const onChangeSort = (newSort: string) => {
         // делает студент
-
-        // setSort(
+        setSort(newSort)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
 
         // sendQuery(
@@ -85,21 +87,23 @@ const HW15 = () => {
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        console.log({page: params.page, count: params.count})
+        sendQuery({page:1, count:4,sort:''})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
 
     const mappedTechs = techs.map(t => (
-        <div key={t.id} className={s.row}>
-            <div id={'hw15-tech-' + t.id} className={s.tech}>
+        <tr key={t.id} className={s.row}>
+            <p></p>
+            <td id={'hw15-tech-' + t.id} className={s.tech}>
                 {t.tech}
-            </div>
+            </td>
 
-            <div id={'hw15-developer-' + t.id} className={s.developer}>
+            <td id={'hw15-developer-' + t.id} className={s.developer}>
                 {t.developer}
-            </div>
-        </div>
+            </td>
+        </tr>
     ))
 
     return (
@@ -107,28 +111,30 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+                {idLoading ? <div id={'hw15-loading'} className={s.loading}>Loading...</div> :
+                    <div>
+                    <SuperPagination
+                        page={page}
+                        itemsCountForPage={count}
+                        totalCount={totalCount}
+                        onChange={onChangePagination}
+                    />
+                        <table>
+                            <div className={s.rowHeader}>
+                                <div className={s.techHeader}>
+                                    tech
+                                    <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                                </div>
 
-                <SuperPagination
-                    page={page}
-                    itemsCountForPage={count}
-                    totalCount={totalCount}
-                    onChange={onChangePagination}
-                />
-
-                <div className={s.rowHeader}>
-                    <div className={s.techHeader}>
-                        tech
-                        <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
+                                <div className={s.developerHeader}>
+                                    developer
+                                    <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
+                                </div>
+                            </div>
+                            {mappedTechs}
+                        </table>
                     </div>
-
-                    <div className={s.developerHeader}>
-                        developer
-                        <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
-                    </div>
-                </div>
-
-                {mappedTechs}
+                }
             </div>
         </div>
     )
